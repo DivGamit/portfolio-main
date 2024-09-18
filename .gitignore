@@ -1,0 +1,17 @@
+# Environment variables
+.env
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+
+# MongoDB data files (if applicable)
+*.data
+*.log
+
+# Flask specific files
+instance/

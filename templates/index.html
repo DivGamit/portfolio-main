@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/favicon-32x32.png') }}" />
+
+    <!-- Animate CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Portfolio</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <h1>DIVYESH GAMIT</h1>
+        <ul class="navigation">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="{{ url_for('download_file', filename='resume.pdf') }}" class="cv">Download CV</a></li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+            <ion-icon class="bars" name="menu-outline"></ion-icon>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <img src="{{ url_for('static', filename='images/Divyesh.jpg') }}" alt="Divyesh Gamit" loading="lazy" class="hero-img" />
+        <div class="bio animate__animated animate__shakeX">
+            <h2 class="bio-title">Hii, I am Divyesh Gamit</h2>
+            <p class="bio-text">Born in Mumbai and currently living in Dombivli west, Maharashtra</p>
+            <p class="bio-text">Email Address-<li>divgamit97@gmail.com</li> 
+                                      <li>divyesh.gamit@rediffmail.com</li></p>  
+            <p class="bio-text">Contact-<li> 9004098242</li></p> 
+        </div>
+    </section>
+
+    <!-- More about -->
+    <section class="more-about">
+        <h2>More About Me</h2>
+        <p> My name is Divyesh Gamit and I was born in Mumbai, Maharashtra, I have done my SSC and HSC from Maharashtra State Board.
+            I completed my Graduation Bachelor in Science with Physics as Major from Ramnarain Ruia College and
+            Post Graduation Master of Computer Application from Amity University in 2022. 
+        </p>
+        <p>My Hobby is to collect vintage coins, videogames, listening to old music, Cricket and Football</p>
+    </section>
+
+    <!-- Skills section -->
+    <section class="skills" id="skills">
+        <h2 class="skill-header animate__animated animate__bounce">Skills</h2>
+        <div class="skills-wrapper">
+            <li>Personal skills - Eager to learn new things, Hardworking and Easy to adapt to new environment.</li>
+            <li>Ability to work cooperatively as good team member</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Microsoft Excel, Word, Powerpoint</li>
+            <li>Microsoft PowerBi</li>
+            <li>Mysql, Postgresql</li>
+            <li>Html, Css, Javascript</li>
+            <li>Machine Learning</li>
+        </div>
+    </section> 
+
+    <!-- Projects section -->
+    <section class="projects" id="projects">
+        <h2 class="projects-title">Some of my Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <h3 class="project-title">Cloud Computing Future, impact of COVID 19 and Security.</h3>
+                <p class="project-details">
+                    The Concept of Cloud computing and the future of Cloud Computing,what is the future of Cloud Computing.
+                    The impact of COVID 19 on the Cloud Computing and the global market.
+                </p>
+            </div>
+            <div class="project">
+                <h3 class="project-title">Edge Computing and Green Cloud Computing the future of Cloud Computing.</h3>
+                <p class="project-details">
+                    The Concept of Edge and Green computing and why they are considered as the future of Cloud Computing.
+                    The project explains the limits of Cloud Computing, the impact on Environment and how it can be overcome by Edge and Green
+                    Cloud Computing
+                </p>
+            </div>
+            <div class="project">
+                <h3 class="project-title">Recommendation movie using Machine Learning.</h3>
+                <p class="project-details">
+                    This is a program which uses Data of movies and compare it with user input movie name and checks the similarity between
+                    them to recommend the movies list using Machine learning.
+                </p>
+            </div>
+            <div class="project">
+                <h3 class="project-title">Python Web Scrapping.</h3>
+                <p class="project-details">
+                    Webscrapping Covid 19 data statistics using BeautifulSoup and saving it in Excel files
+                </p>
+            </div>
+            <div class="project">
+                <h3 class="project-title">Mask Detention using CNN model.</h3>
+                <p class="project-details">
+                    In this project deep learning convolutional neural networks model is used to predict whether the image has masked or not
+                    masked. Image is being processed first and fitted in the model to predict
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+        <h2>Get In Touch With Me</h2>
+        <div class="contact-form-container">
+            <div class="contact-form">
+                <form action="/submit" method="POST">
+                    <div class="form-control">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="sender-name" placeholder="Enter Your Name" class="input-field" required />
+                    </div>
+                    <div class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="sender-email" placeholder="Enter Your Email" class="input-field" required />
+                    </div>
+                    <div class="form-control">
+                        <label for="message">Message</label>
+                        <textarea id="message" cols="60" rows="10" placeholder="Enter Your Message" name="message" class="input-field" required></textarea>
+                    </div>
+                    <input type="submit" value="Submit" id="submit-btn" class="submit-btn" />
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social accounts - Fixed to the right -->
+    <div class="socials">
+        <a href="" target="_blank"><img src="{{ url_for('static', filename='icons/icons8-linkedin-circled.gif') }}" alt="Linkedin" loading="lazy" class="socicon" /></a>
+        <a href="" target="_blank"><img src="{{ url_for('static', filename='icons/icons8-github.gif') }}" alt="Github" class="socicon" /></a>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <p class="copy">&copy; Copyright 2022</p>
+        <p class="copy">Built by Divyesh Gamit.</p>
+    </footer>
+</body>
+</html>
