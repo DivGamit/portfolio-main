@@ -13,8 +13,7 @@ app = Flask(__name__)
 app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'mongodb://localhost:27017/portfolio')
 mongo = PyMongo(app)
 
-# Define the static folder path
-STATIC_FOLDER = 'static'
+
 
 def is_valid_email(email):
     email_regex = r'^\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
@@ -24,13 +23,6 @@ def is_valid_email(email):
 def index():
     return render_template('index.html')
 
-@app.route('/download/<filename>')
-def download_file(filename):
-    # Serve files from the 'static' folder
-    try:
-        return send_from_directory(STATIC_FOLDER, filename, as_attachment=True)
-    except FileNotFoundError:
-        abort(404, description="File not found.")
 
 @app.route('/submit', methods=['POST'])
 def submit():
